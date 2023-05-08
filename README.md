@@ -3,5 +3,5 @@ The sports results API repository is a web service that provides access to the r
 
 This service is intended to be used by a bot that will push data from this service into a oracle smart contract deployed on EVM compatible chains. 
 
-Oracle repository: (https://github.com/vedantd/SportsResultOracle)
+Oracle repository: [https://github.com/vedantd/SportsResultOracle]
 
