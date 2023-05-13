@@ -27,14 +27,17 @@ for table in table:
         by=By.CLASS_NAME, value="event__participant--away")
     Outcomes = table.find_elements(
         by=By.CLASS_NAME, value="extraInfo")
+    dateTimes = table.find_elements(
+        by=By.CLASS_NAME, value="event__time")
 
-    home_team = homeTeams[0].text
-    away_team = awayTeams[0].text
-    outcome = Outcomes[0].text
+    homeTeam = homeTeams[0].text
+    awayTeam = awayTeams[0].text
+    matchOutcome = Outcomes[0].text
+    dateTime = dateTimes[0].text
 
-    if "won" in outcome:
+    if "won" in matchOutcome:
         # Split the string into an array of words
-        result_array = outcome.split()
+        result_array = matchOutcome.split()
 
         # Find the index of the word "won"
         won_index = result_array.index("won")
@@ -44,8 +47,8 @@ for table in table:
     else:
         result = ("No winner in this match")
 
-    print("IPL match: " + home_team + " vs " +
-          away_team + "- " + "Winner " + result)
+    print("IPL match: " + homeTeam + " vs " +
+          awayTeam + "- " + "Winner " + result + " conducted on: " + dateTime)
 
 
 # Close the driver
